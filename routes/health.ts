@@ -1,13 +1,13 @@
-import Fastify from "fastify"
-import app from "../app.js"
+import {type FastifyPluginAsync } from "fastify";
 
-function getHealth(app: Fastify.FastifyInstance) {
-  app.get('/health', (request, reply) => {
+
+const healthPlugin: FastifyPluginAsync = async (app) => {
+  app.get("/health", async (request, reply) => {
     return {
-      status: "ok",
-      app: "TaskFlow"
+      status: "OK",
+      app: app.config.appName
     }
   });
 }
 
-app.register(getHealth);
+export default healthPlugin;

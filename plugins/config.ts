@@ -1,9 +1,11 @@
-import Fastify from "fastify"
+import fp from "fastify-plugin";
+import {type FastifyPluginAsync } from "fastify";
 
-function takeConfig(app) {
+const configPLugin: FastifyPluginAsync = async (app) => {
   app.decorate("config", {
     port: 3000,
     appName: "TaskFlow"
   });
 }
-app.register(takeConfig);
+
+export default fp(configPLugin);
