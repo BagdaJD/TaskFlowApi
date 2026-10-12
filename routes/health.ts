@@ -8,11 +8,12 @@ const healthPlugin: FastifyPluginAsync = async (app) => {
       app: app.config.appName,
       enviroment: app.config.enviroment
     }
+
   });
 
-  app.get("/hello", async (reqiest, reply) => {
+  app.get("/hello", async (request, reply) => {
     return {
-      message: "Hello from TaskFlow"
+      message: "Hello from TaskFlow",
     }
   });
 }
