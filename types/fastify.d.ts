@@ -4,6 +4,7 @@ declare module "fastify" {
         config: {
             port: number;
             appName: string;
+            enviroment: string;
         };
     }
 }

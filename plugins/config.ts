@@ -4,7 +4,8 @@ import {type FastifyPluginAsync } from "fastify";
 const configPLugin: FastifyPluginAsync = async (app) => {
   app.decorate("config", {
     port: 3000,
-    appName: "TaskFlow"
+    appName: "TaskFlow",
+    enviroment: "development"
   });
 }
 
